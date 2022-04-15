@@ -1,0 +1,15 @@
+kind: pipeline
+name: Use Detections Wrapper Image
+type: kubernetes
+
+steps:
+      
+  - name: docker push
+    image: plugins/docker
+    settings:
+      repo: jmcparland/usercode-test
+      auto_tag: true
+      username: 
+        from_secret: DOCKER_USER
+      password: 
+        from_secret: DOCKER_PASSWORD
